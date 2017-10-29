@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textview_header">Выберите город для прогноза:</string>
+    <string name="button_show_weather">Предсказать погоду</string>
+    <string name="textview_view_weather">Что хочу, то и предскажу...</string>
+    <string-array name="cities">
+        <item>Москва</item>
+        <item>Питер</item>
+        <item>Краснодар</item>
+        <item>Якутск</item>
+        <item>Лондон</item>
+    </string-array>
+
+    <string-array name="cities_temps">
+        <item>+ 5 C</item>
+        <item>+ 2 C</item>
+        <item>+ 25 C</item>
+        <item>- 25 C</item>
+        <item>+ 10 C</item>
+    </string-array>
+    <string name="app_name">FoxWeather</string>
+</resources>

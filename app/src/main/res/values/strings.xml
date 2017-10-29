@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FoxWeather</string>
+    <string name="textview_header">Select city for prediction of weather:</string>
+    <string name="button_show_weather">Predict weather</string>
+    <string name="textview_view_weather">What I want, I will predict…</string>
+    <string-array name="cities">
+        <item>Moscow</item>
+        <item>St.Piterburg</item>
+        <item>Krasnodar</item>
+        <item>Yakutsk</item>
+        <item>London</item>
+    </string-array>
+
+    <string-array name="cities_temps">
+        <item>+ 5 C</item>
+        <item>+ 2 C</item>
+        <item>+ 25 C</item>
+        <item>- 25 C</item>
+        <item>+ 10 C</item>
+    </string-array>
+</resources>
