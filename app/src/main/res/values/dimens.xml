@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_standart_LR">10dp</dimen>
+    <dimen name="header_1">48sp</dimen>
+    <dimen name="spinner_height">40dp</dimen>
+    <dimen name="header_size">20sp</dimen>
+    <dimen name="standart_margin_top">20dp</dimen>
+</resources>

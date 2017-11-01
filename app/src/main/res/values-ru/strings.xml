@@ -19,4 +19,6 @@
         <item>+ 10 C</item>
     </string-array>
     <string name="app_name">FoxWeather</string>
+    <string name="share">Поделиться с друзьями</string>
+    <string name="in">В</string>
 </resources>

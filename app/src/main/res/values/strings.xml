@@ -3,6 +3,9 @@
     <string name="textview_header">Select city for prediction of weather:</string>
     <string name="button_show_weather">Predict weather</string>
     <string name="textview_view_weather">What I want, I will predict…</string>
+    <string name="share">Share to friends</string>
+    <string name="in">In</string>
+    <string name="result_recieve">Cool man, one more friend is warned!</string>
     <string-array name="cities">
         <item>Moscow</item>
         <item>St.Piterburg</item>
