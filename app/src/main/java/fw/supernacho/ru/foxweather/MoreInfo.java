@@ -44,6 +44,9 @@ public class MoreInfo extends AppCompatActivity {
                     intent.putExtra(RESULT, stringBuilder.toString());
                     setResult(RESULT_OK, intent);
                     finish();
+                    break;
+                default:
+                    throw new RuntimeException("View not found in switch MoreInfo");
             }
         }
     };
