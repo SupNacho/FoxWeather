@@ -18,6 +18,11 @@ public class MoreInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_info);
         init();
+        getDataFromOtherActivity();
+        restoreActivity(savedInstanceState);
+    }
+
+    private void getDataFromOtherActivity() {
         Intent intent = getIntent();
         if (intent != null){
             int city = intent.getIntExtra(MainActivity.CITY_ID, 0);
@@ -31,6 +36,12 @@ public class MoreInfo extends AppCompatActivity {
         }
     }
 
+    private void restoreActivity(Bundle savedInstanceState) {
+        if (savedInstanceState != null){
+            moreInfo.setText(savedInstanceState.getString(RESULT));
+        }
+    }
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -40,16 +51,32 @@ public class MoreInfo extends AppCompatActivity {
                     shareIntent.setType("text/plane");
                     shareIntent.putExtra(Intent.EXTRA_TEXT, moreInfo.getText().toString());
                     startActivity(shareIntent);
-                    Intent intent = new Intent();
-                    intent.putExtra(RESULT, stringBuilder.toString());
-                    setResult(RESULT_OK, intent);
-                    finish();
+                    returnResultForActivity();
                     break;
                 default:
                     throw new RuntimeException("View not found in switch MoreInfo");
             }
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        returnResultForActivity();
+        super.onBackPressed();
+    }
+
+    private void returnResultForActivity() {
+        Intent intent = new Intent();
+        intent.putExtra(RESULT, stringBuilder.toString());
+        setResult(RESULT_OK, intent);
+        finish();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString(RESULT, moreInfo.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
 
     private void init(){
         Button buttonShare = findViewById(R.id.button_share);

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String APP_PREFFERENCES_LASTMSG = "last_msg";
     public static final String CITY_ID = "city_id";
     public static final String CITY_NAME = "city_name";
+    private static final String WEATHER_VIEW = "weather_view";
 
     private Spinner spinner_city;
     private TextView viewShowWeather;
@@ -27,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+        restoreActivity(savedInstanceState);
+    }
+
+    private void restoreActivity(Bundle savedInstanceState) {
+        if (savedInstanceState != null){
+            spinner_city.setSelection(savedInstanceState.getInt(CITY_ID));
+            viewShowWeather.setText(savedInstanceState.getString(WEATHER_VIEW));
+        }
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -66,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
         spinner_city = findViewById(R.id.spinner_city_chooser);
         Button buttonShowWeather = findViewById(R.id.button_show_weather);
         buttonShowWeather.setOnClickListener(onClickListener);
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(CITY_ID, spinner_city.getSelectedItemPosition());
+        outState.putString(WEATHER_VIEW, viewShowWeather.getText().toString());
+        super.onSaveInstanceState(outState);
     }
 
     @Override
