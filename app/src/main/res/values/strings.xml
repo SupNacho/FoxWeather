@@ -6,6 +6,12 @@
     <string name="share">Share to friends</string>
     <string name="in">In</string>
     <string name="result_recieve">Cool man, one more friend is warned!</string>
+    <string name="predict_weather_for_tomorrow">Predict weather for tomorrow</string>
+    <string name="predict_weather_week">Predict weather for week</string>
+    <string name="no_more_info">There no more information yet.</string>
+    <string name="pressure_info">pressure 755</string>
+    <string name="tomorrow_info">+ 25 C</string>
+    <string name="week_info">+ 25C + 30C + 35C + 40C + 35C + 30C + 25C </string>
     <string-array name="cities">
         <item>Moscow</item>
         <item>St.Piterburg</item>

@@ -2,7 +2,7 @@
 <resources>
     <string name="textview_header">Выберите город для прогноза:</string>
     <string name="button_show_weather">Предсказать погоду</string>
-    <string name="textview_view_weather">Что хочу, то и предскажу...</string>
+    <string name="textview_view_weather">Что хочу, то и предскажу#8230</string>
     <string-array name="cities">
         <item>Москва</item>
         <item>Питер</item>
@@ -21,4 +21,9 @@
     <string name="app_name">FoxWeather</string>
     <string name="share">Поделиться с друзьями</string>
     <string name="in">В</string>
+    <string name="result_recieve">Здорово, всех предупредил!</string>
+    <string name="pressure_info">Давление 755</string>
+    <string name="tomorrow_info">+ 25 C</string>
+    <string name="week_info">+ 25C + 30C + 35C + 40C + 35C + 30C + 25C </string>
+    <string name="no_more_info">Информация отсутствует</string>
 </resources>

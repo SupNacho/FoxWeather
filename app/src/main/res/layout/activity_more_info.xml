@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="fw.supernacho.ru.foxweather.MoreInfo">
-
+ <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     android:orientation="vertical">
     <TextView
         android:id="@+id/textview_more_info"
         android:layout_width="match_parent"
@@ -15,9 +17,42 @@
         android:layout_marginLeft="@dimen/margin_standart_LR"
         android:layout_marginRight="@dimen/margin_standart_LR"
         android:layout_marginTop="@dimen/standart_margin_top"
-        android:text="There no more information yet."
+        android:text="@string/no_more_info"
         android:textSize="@dimen/header_1"
         android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/textview_pressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_standart_LR"
+        android:layout_marginRight="@dimen/margin_standart_LR"
+        android:layout_marginTop="@dimen/standart_margin_top"
+        android:text="@string/no_more_info"
+        android:textSize="@dimen/header_2"
+        android:textAlignment="center"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/textview_tomorrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_standart_LR"
+        android:layout_marginRight="@dimen/margin_standart_LR"
+        android:layout_marginTop="@dimen/standart_margin_top"
+        android:text="@string/no_more_info"
+        android:textSize="@dimen/header_3"
+        android:textAlignment="center"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/textview_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_standart_LR"
+        android:layout_marginRight="@dimen/margin_standart_LR"
+        android:layout_marginTop="@dimen/standart_margin_top"
+        android:text="@string/no_more_info"
+        android:textSize="@dimen/header_4"
+        android:textAlignment="center"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/button_share"
@@ -27,5 +62,5 @@
         android:layout_marginTop="@dimen/standart_margin_top"
         android:layout_marginRight="@dimen/margin_standart_LR"
         android:text="@string/share"/>
-
-</LinearLayout>
+     </LinearLayout>
+</ScrollView>

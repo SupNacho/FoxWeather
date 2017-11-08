@@ -9,7 +9,13 @@ import android.widget.TextView;
 
 public class MoreInfo extends AppCompatActivity {
     private TextView moreInfo;
+    private TextView pressureInfo;
+    private TextView tomorrowInfo;
+    private TextView weekInfo;
     private String cityName;
+    private boolean isCheckedPressure;
+    private boolean isCheckedTomorrow;
+    private boolean isCheckedWeek;
     private StringBuilder stringBuilder;
     public static final String RESULT = "result";
 
@@ -20,6 +26,18 @@ public class MoreInfo extends AppCompatActivity {
         init();
         getDataFromOtherActivity();
         restoreActivity(savedInstanceState);
+        if (isCheckedPressure) {
+            pressureInfo.setVisibility(View.VISIBLE);
+            pressureInfo.setText(R.string.pressure_info);
+        }
+        if (isCheckedTomorrow) {
+            tomorrowInfo.setVisibility(View.VISIBLE);
+            tomorrowInfo.setText(R.string.tomorrow_info);
+        }
+        if (isCheckedWeek) {
+            weekInfo.setVisibility(View.VISIBLE);
+            weekInfo.setText(R.string.week_info);
+        }
     }
 
     private void getDataFromOtherActivity() {
@@ -27,12 +45,16 @@ public class MoreInfo extends AppCompatActivity {
         if (intent != null){
             int city = intent.getIntExtra(MainActivity.CITY_ID, 0);
             cityName = intent.getStringExtra(MainActivity.CITY_NAME);
+            isCheckedPressure = intent.getBooleanExtra(MainActivity.IS_PRESSURE, false);
+            isCheckedTomorrow = intent.getBooleanExtra(MainActivity.IS_TOMORROW, false);
+            isCheckedWeek = intent.getBooleanExtra(MainActivity.IS_WEEK, false);
             if (cityName != null) {
                 stringBuilder.append(getString(R.string.in)).append(" ")
                         .append(cityName).append("\n");
             }
             stringBuilder.append(Prediction.predict(MoreInfo.this, city));
             moreInfo.setText(stringBuilder.toString());
+
         }
     }
 
@@ -81,6 +103,9 @@ public class MoreInfo extends AppCompatActivity {
     private void init(){
         Button buttonShare = findViewById(R.id.button_share);
         moreInfo = findViewById(R.id.textview_more_info);
+        pressureInfo = findViewById(R.id.textview_pressure);
+        tomorrowInfo = findViewById(R.id.textview_tomorrow);
+        weekInfo = findViewById(R.id.textview_week);
         stringBuilder = new StringBuilder();
         buttonShare.setOnClickListener(onClickListener);
     }
